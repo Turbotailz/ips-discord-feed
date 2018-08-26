@@ -19,22 +19,14 @@ client.login(process.env.DISCORD_TOKEN);
 let latestPosts = [];
 let storedPosts = [];
 
-fs.openSync('latest-posts.json', 'r', (err, data) => {
-	if (err) {
-		console.log(err);
-		if (err.code === 'ENOENT') {
-			console.warn('latest-posts.json does not exist, creating');
-			fs.writeFileSync('latest-posts.json', '');
-			return;
-		}
+let exists = fs.existsSync('latest-posts.json');
 
-		throw err;
-	}
-});
+if (!exists) {
+	console.warn('latest-posts.json does not exist, creating');
+	fs.writeFileSync('latest-posts.json', JSON.stringify([]));
+} else {
+	latestPosts = require('./latest-posts.json');
 
-latestPosts = require('./latest-posts.json');
-
-if (latestPosts) {
 	console.log('Loading latest-posts.json');
 	
 	latestPosts.forEach((post) => {
@@ -176,4 +168,4 @@ client.setInterval(() => {
 		console.log('Error connecting to IP Board API - Posts');
 	});
 	
-}, process.env.DISCORD_CHANNEL);
+}, process.env.DELAY);
