@@ -175,4 +175,4 @@ client.setInterval(() => {
 		console.log('Error connecting to IP Board API - Posts');
 	});
 	
-}, 10000);
+}, process.env.DISCORD_CHANNEL);
