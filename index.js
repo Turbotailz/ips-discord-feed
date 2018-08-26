@@ -21,6 +21,7 @@ let storedPosts = [];
 
 fs.openSync('latest-posts.json', 'r', (err, data) => {
 	if (err) {
+		console.log(err);
 		if (err.code === 'ENOENT') {
 			console.warn('latest-posts.json does not exist, creating');
 			fs.writeFileSync('latest-posts.json', '');
