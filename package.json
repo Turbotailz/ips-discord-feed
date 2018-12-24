@@ -12,7 +12,7 @@
   "dependencies": {
     "@slack/client": "^4.3.1",
     "axios": "^0.18.0",
-    "console-stamp": "^0.2.6",
+    "console-stamp": "^0.2.7",
     "discord.js": "^11.3.2",
     "dotenv": "^5.0.1",
     "html2plaintext": "^2.0.1",

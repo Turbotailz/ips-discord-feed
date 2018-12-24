@@ -167,5 +167,7 @@ client.setInterval(() => {
 		}
 		console.log('Error connecting to IP Board API - Posts');
 	});
-	
+
+client.on('error', console.error);
+
 }, process.env.DELAY);
