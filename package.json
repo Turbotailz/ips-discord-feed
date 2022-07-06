@@ -16,7 +16,7 @@
     "discord.js": "^11.3.2",
     "dotenv": "^5.0.1",
     "html2plaintext": "^2.0.1",
-    "moment": "^2.22.1"
+    "moment": "^2.29.4"
   },
   "devDependencies": {
     "nodemon": "^1.18.3"
